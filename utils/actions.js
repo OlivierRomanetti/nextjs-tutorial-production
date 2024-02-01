@@ -13,7 +13,7 @@ export const getAllTasks = async () => {
 };
 
 export const createTask = async (prevState, formData) => {
-  await new Promise((resolve) => setTimeout(() => resolve(), 1000));
+  // await new Promise((resolve) => setTimeout(() => resolve(), 1000));
 
   const Task = z.object({
     content: z.string().min(5),
@@ -31,7 +31,7 @@ export const createTask = async (prevState, formData) => {
 };
 
 export const deleteTask = async (formData) => {
-  await new Promise((resolve) => setTimeout(() => resolve(), 1000));
+  // await new Promise((resolve) => setTimeout(() => resolve(), 1000));
   const id = formData.get('id');
   await prisma.task.delete({ where: { id } });
   revalidatePath('/tasks');
